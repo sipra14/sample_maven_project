@@ -1,4 +1,3 @@
-FROM openjdk:8
-EXPOSE 8080
-ADD target/jenkins-docker.war jenkins-docker.war
-ENTRYPOINT ["java","-war","/jenkins-docker.war"]
+FROM tomcat:9
+
+COPY target/*.war /var/lib/tomcat9/webapps/jenkins-docker.war
