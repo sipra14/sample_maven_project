@@ -1,3 +1,4 @@
-FROM tomcat9
-
-COPY target/*.war /var/lib/tomcat9/jenkins-docker.war
+FROM openjdk:8
+EXPOSE 8080
+ADD targer/jenkins-docker.war jenkins-docker.war
+ENTRYPOINT ["java","-war","/jenkins-docker.war"]
